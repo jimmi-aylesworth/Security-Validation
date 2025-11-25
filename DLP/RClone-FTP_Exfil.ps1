@@ -1,6 +1,6 @@
 <#
 =========================================================================================
-Script Name:    DLP-FTP_Exfil.ps1
+Script Name:    RClone-FTP_Exfil.ps1
 Description:    This script performs the following actions:
                 1. Creates/ensures a working download directory in C:\Users\Public\Downloads.
                 2. Downloads the latest rclone Windows package.
