@@ -1,3 +1,26 @@
+<#
+=========================================================================================
+Script Name:    DLP-FTP_Exfil.ps1
+Description:    This script performs the following actions:
+                1. Creates/ensures a working download directory in C:\Users\Public\Downloads.
+                2. Downloads the latest rclone Windows package.
+                3. Extracts rclone and locates the rclone.exe binary.
+                4. Downloads a ZIP file containing synthetic DLP test data.
+                5. Configures an FTP remote in rclone using test credentials.
+                6. Uploads the synthetic test data (exfil.zip) to the FTP server
+                   for the purpose of validating DLP monitoring, alerts, and controls.
+                7. Displays status messages throughout execution and notifies when upload is complete.
+
+Author:         Jimmi Aylesworth
+Date:           2025-11-25
+Warning:        PROCEED WITH CAUTION!
+                - This script performs automated data transfer to an external FTP server.
+                - Use ONLY with synthetic, non-sensitive test data.
+                - Ensure you have appropriate authorization for DLP testing.
+                - Avoid running on production systems without proper approval.
+=========================================================================================
+#>
+
 # Define paths
 $downloadDir = "C:\Users\Public\Downloads"
 $rcloneUrl = "https://downloads.rclone.org/rclone-current-windows-amd64.zip"
