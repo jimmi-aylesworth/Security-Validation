@@ -16,13 +16,13 @@ A safe, controller-driven Rust pair that emulates propagation in a lab without a
 
 ## Agent
 
-- Runs on each lab host (pre-installed / pre-launched by you)
+- Runs on each lab host (pre-installed / pre-launched)
 - Polls the controller for tasks
 - For each approved target, performs a TCP connect test to port 445 only
 - Reports results back to the controller
 - Does not scan subnets, does not self-install, does not execute remotely
 
-This gives you a controlled propagation emulation that is auditable and safe for lab validation.
+This provides a controlled propagation emulation that is auditable and safe for lab validation.
 
 ---
 
@@ -117,7 +117,7 @@ Examples:
 {"event":"seeded","seed_node":"192.168.0.10","task":{"task_id":"...","kind":"probe_neighbors","hop":0,"probes":[...]}}{"event":"register","node_id":"192.168.0.10","version":"0.1.0"}{"event":"task_fetch","node_id":"192.168.0.10","task_count":1}{"event":"report","node_id":"192.168.0.10","task_id":"...","hop":0,"findings":[...]}{"event":"activated","node_id":"192.168.0.11","hop":1,"task":{"task_id":"...","kind":"probe_neighbors","hop":1,"probes":[...]}}
 ```
 
-This gives you:
+This gives us:
 
 - who ran
 - what was assigned
