@@ -198,9 +198,7 @@ To keep it controlled and auditable:
 
 ---
 
-# Things you can safely add next
-
-If you want to make this more useful without becoming unsafe, I can help you add:
+# Things to consider for future release
 
 1. Signed task tokens
 	So agents only accept controller-issued work.
@@ -210,21 +208,24 @@ If you want to make this more useful without becoming unsafe, I can help you add
 	Store controller runtime state in SQLite or a JSON snapshot so the run can resume.
 4. CSV/HTML reporting
 	Summarize:
-
 	- hop graph
 	- reachable nodes
 	- timing
 	- max spread depth
 	- failed connections
-
 5. Optional canary-path validation
 	A strictly allowlisted, non-destructive check against known approved lab targets only (not arbitrary shares).
 
+Additionally consider:
+
+- A Windows service version of the agent so it can run cleanly on lab VMs as a service instead of a console app
+- A Mermaid or Graphviz output generator for the propagation path from audit.jsonl
+
 ---
 
-# Why this is a good fit for your validation goal
+# Why this is a good fit for validation goals
 
-This design tests:
+The design tests:
 
 - which hosts are reachable over SMB port 445
 - what propagation graph would be possible
@@ -232,22 +233,8 @@ This design tests:
 - whether controls like segmentation and hop limits work
 - whether monitoring captures the chain
 
-without code that:
+Without code that:
 
-- propagates itself,
-- copies payloads,
-- modifies remote systems,
-- or behaves like a 'real' worm.
-
-A hardened v2 should include:
-
-- kill switch
-- HMAC-signed tasks
-- persistent controller state
-- retry/backoff
-- CSV export
-
-Additionally consider:
-
-- A Windows service version of the agent so it can run cleanly on lab VMs as a service instead of a console app
-- A Mermaid or Graphviz output generator for the propagation path from audit.jsonl
+- propagates itself
+- copies payloads
+- modifies remote systems
