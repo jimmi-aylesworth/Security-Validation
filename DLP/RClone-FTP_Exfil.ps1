@@ -16,8 +16,7 @@ Date:           2025-11-25
 Warning:        PROCEED WITH CAUTION!
                 - This script performs automated data transfer to an external FTP server.
                 - Use ONLY with synthetic, non-sensitive test data.
-                - Ensure you have appropriate authorization for DLP testing.
-                - Avoid running on production systems without proper approval.
+                - Ensure you have appropriate authorization.
 =========================================================================================
 #>
 
