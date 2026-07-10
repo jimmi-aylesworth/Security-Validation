@@ -1,0 +1,20 @@
+[package]
+name = "TurtleSoup"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+aes-gcm = "0.10.3"
+rand = "0.8.5"
+rayon = "1.12.0"
+rsa = "0.9.10"
+walkdir = "2.5.0"
+windows-sys = { version = "0.52.0", features = ["Win32_System_Threading", "Win32_Foundation", "Win32_Security"] } 
+
+[profile.release]
+opt-level = 3          # Max optimization (default for release)
+lto = "fat"            # Link-Time Optimization — "thin" is fast; "fat" is max
+codegen-units = 1      # Single codegen unit = better inlining/optimization (slower compile)
+panic = "abort"        # Smaller binary; no stack unwinding overhead
+strip = true           # Strip debug symbols from binary (Rust 1.59+)
+debug = false          # No debug info in release
