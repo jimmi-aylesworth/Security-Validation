@@ -1,0 +1,3 @@
+- Code_Encoder will generate xor'd byte arrays.
+- RapidTurgle is an example of ransomware and how to implement 'code_encoder' output into a program
+- TurtleSoup is a WIP example of a ransomeware decoder.
