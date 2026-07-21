@@ -1,5 +1,6 @@
 use aes_gcm::{Aes256Gcm, Key, Nonce, KeyInit, aead::Aead};
 use rsa::{Pkcs1v15Encrypt, RsaPrivateKey};
+use rsa::traits::PublicKeyParts;
 use rsa::pkcs8::DecodePrivateKey; 
 use walkdir::WalkDir;
 use std::fs::{File};
@@ -77,7 +78,11 @@ impl DecryptionEngine {
 
         // Separate the data
         // RSA 2048-bit keys produce 256 bytes of encrypted data
-        let rsa_key_len = 256; 
+        // RSA 4096-bit keys produce 512 bytes of encrypted data
+        // Make sure to set correctly or you won't decrypt!
+        // update to use `self.priv_key.size()` and don't worry about it ;)
+        //let rsa_key_len = 512; 
+        let rsa_key_len = self.priv_key.size();
         let nonce_len = 12;
         
         if buffer.len() < (rsa_key_len + nonce_len) {
