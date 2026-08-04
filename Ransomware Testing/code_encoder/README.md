@@ -80,7 +80,7 @@ The STEP comments describe a **two-phase authoring workflow**:
    `Encoded : [...]` line.
 2. *Harden phase* — replace STEP 1's literal **and** STEP 2's `xor_encode`
    call with a hardcoded `let encoded_command: Vec<u8> = vec![...];`, then
-   delete the cleartext and the debug `println!`s.
+   delete the cleartext and the debug `println`s.
 
 **As currently written, phase 2 was never done.** The code still:
 - keeps the cleartext string literal in the source (so it's in the compiled
