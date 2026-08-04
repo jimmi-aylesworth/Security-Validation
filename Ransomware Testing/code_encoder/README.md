@@ -1,8 +1,7 @@
 # XOR Command Harness — Maintainer Guide
 
-> Handoff documentation for the single-file Rust utility that XOR-obfuscates a
+> Documentation for the single-file Rust utility that XOR-obfuscates a
 > command string, decodes it at runtime, and executes it via `cmd`.
-> Written for whoever inherits this after the original author.
 
 ---
 
