@@ -66,7 +66,7 @@ resulting `.exe` must be run **on Windows**, since it calls real ADSI/COM.
 ## Usage
 
 ```
-atk.exe
+admin_toolkit.exe
 ```
 
 Navigate the numbered menus; `0` goes back/exits at any level.
@@ -121,6 +121,3 @@ knowing before adding new ADSI calls.
   override: refuses to remove the account currently running the program,
   and refuses to remove the last remaining administrator.
 
-## Author
-
-Jimmi Aylesworth
