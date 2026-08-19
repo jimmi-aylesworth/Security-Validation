@@ -1,0 +1,1 @@
+rundll32-loadable, fully self-contained COM/ADSI local-account administration DLL, built for exercising Windows Security-log detection rules (account creation/deletion/modification event IDs) in a LAB environment ONLY.
